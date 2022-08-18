@@ -50,3 +50,10 @@ int finish(PlayGameState state) {
           .lastStep +
       1;
 }
+
+int finishByWarna(PlayGameState state, Warna warna) {
+  return state.props.listPlayer
+          .firstWhere((element) => element.warna == warna)
+          .lastStep +
+      1;
+}

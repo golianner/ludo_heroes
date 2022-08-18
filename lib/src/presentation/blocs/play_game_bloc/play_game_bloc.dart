@@ -44,8 +44,8 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
 
       // If Player not have any pieces outside base and dice value after roll is not 6
       if (event is SkipPlayerTurn) {
-        state.props.currentTurn =
-            CurrentTurn(warna: nextWarna(), turn: Turn.standBy);
+        state.props.currentTurn.turn = Turn.standBy;
+        nextPlayerTurn();
         emit(PlayGameInitial());
       }
 
@@ -175,6 +175,7 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
                 .finishedPieces
                 .length;
             if (length == 4) {
+              state.props.finishedPlayer.add(currentWarna());
               finishAll = true;
             }
           }
@@ -267,14 +268,14 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
   // Next player turn
   void nextPlayerTurn() {
     bool valid = false;
-    for (int i = 0; i < state.props.listPlayer.length; i++) {
-      Warna warna = TurnList.nextPlayerTurn(state.props.currentTurn.warna);
+    Warna warna = currentWarna();
+    for (int i = 0; i < 4; i++) {
+      warna = TurnList.nextPlayerTurn(warna);
       if (state.props.finishedPlayer
           .where((element) => element == warna)
           .isEmpty) {
         valid = true;
-        state.props.currentTurn.warna =
-            TurnList.nextPlayerTurn(state.props.currentTurn.warna);
+        state.props.currentTurn.warna = warna;
         break;
       }
     }

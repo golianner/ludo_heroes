@@ -63,7 +63,10 @@ _animate(BuildContext context, StepEntity item, PlayGameState state) {
 bool havePawn(StepEntity entity, PlayGameState state) {
   bool result = false;
   if (entity.pieces
-          .where((element) => element.warna == currentWarna(state))
+          .where((element) =>
+              element.warna == currentWarna(state) &&
+              checkAvailable(
+                  finish(state), element.currentStep, currentValue(state)))
           .isNotEmpty &&
       currentTurn(state) == Turn.selectPawn) {
     result = true;
