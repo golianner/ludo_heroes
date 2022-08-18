@@ -22,7 +22,7 @@ class DiceList {
 
   static DiceEntity rollDice() {
     int value = _random();
-    // value = 1;
+    // value = 6;
     return _list.firstWhere((element) => element.value == value);
   }
 }

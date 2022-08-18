@@ -67,37 +67,33 @@ class _MapDefaultScreenState extends State<MapDefaultScreen> {
                               child: Container(
                                 color: Colors.red,
                                 padding: const EdgeInsets.all(25),
-                                child: Container(
-                                  padding: const EdgeInsets.all(2),
-                                  color: Colors.white,
-                                  child: Column(
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          children: state.props.listPiece
-                                              .where((element) =>
-                                                  element.warna == Warna.red &&
-                                                  element.id <= 2)
-                                              .toList()
-                                              .map((item) => baseItem(
-                                                  context, item, state))
-                                              .toList(),
-                                        ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Row(
+                                        children: state.props.listPiece
+                                            .where((element) =>
+                                                element.warna == Warna.red &&
+                                                element.id <= 2)
+                                            .toList()
+                                            .map((item) =>
+                                                baseItem(context, item, state))
+                                            .toList(),
                                       ),
-                                      Expanded(
-                                        child: Row(
-                                          children: state.props.listPiece
-                                              .where((element) =>
-                                                  element.warna == Warna.red &&
-                                                  element.id > 2)
-                                              .toList()
-                                              .map((item) => baseItem(
-                                                  context, item, state))
-                                              .toList(),
-                                        ),
+                                    ),
+                                    Expanded(
+                                      child: Row(
+                                        children: state.props.listPiece
+                                            .where((element) =>
+                                                element.warna == Warna.red &&
+                                                element.id > 2)
+                                            .toList()
+                                            .map((item) =>
+                                                baseItem(context, item, state))
+                                            .toList(),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -160,42 +156,33 @@ class _MapDefaultScreenState extends State<MapDefaultScreen> {
                               child: Container(
                                 color: Colors.blue,
                                 padding: const EdgeInsets.all(20),
-                                child: Container(
-                                  color: Colors.white,
-                                  child: Container(
-                                    padding: const EdgeInsets.all(2),
-                                    color: Colors.white,
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          child: Row(
-                                            children: state.props.listPiece
-                                                .where((element) =>
-                                                    element.warna ==
-                                                        Warna.blue &&
-                                                    element.id <= 6)
-                                                .toList()
-                                                .map((item) => baseItem(
-                                                    context, item, state))
-                                                .toList(),
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Row(
-                                            children: state.props.listPiece
-                                                .where((element) =>
-                                                    element.warna ==
-                                                        Warna.blue &&
-                                                    element.id > 6)
-                                                .toList()
-                                                .map((item) => baseItem(
-                                                    context, item, state))
-                                                .toList(),
-                                          ),
-                                        ),
-                                      ],
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Row(
+                                        children: state.props.listPiece
+                                            .where((element) =>
+                                                element.warna == Warna.blue &&
+                                                element.id <= 6)
+                                            .toList()
+                                            .map((item) =>
+                                                baseItem(context, item, state))
+                                            .toList(),
+                                      ),
                                     ),
-                                  ),
+                                    Expanded(
+                                      child: Row(
+                                        children: state.props.listPiece
+                                            .where((element) =>
+                                                element.warna == Warna.blue &&
+                                                element.id > 6)
+                                            .toList()
+                                            .map((item) =>
+                                                baseItem(context, item, state))
+                                            .toList(),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -339,42 +326,35 @@ class _MapDefaultScreenState extends State<MapDefaultScreen> {
                                 child: Container(
                                   color: Colors.green,
                                   padding: const EdgeInsets.all(20),
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Container(
-                                      padding: const EdgeInsets.all(2),
-                                      color: Colors.white,
-                                      child: Column(
-                                        children: [
-                                          Expanded(
-                                            child: Row(
-                                              children: state.props.listPiece
-                                                  .where((element) =>
-                                                      element.warna ==
-                                                          Warna.green &&
-                                                      element.id <= 10)
-                                                  .toList()
-                                                  .map((item) => baseItem(
-                                                      context, item, state))
-                                                  .toList(),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Row(
-                                              children: state.props.listPiece
-                                                  .where((element) =>
-                                                      element.warna ==
-                                                          Warna.green &&
-                                                      element.id > 10)
-                                                  .toList()
-                                                  .map((item) => baseItem(
-                                                      context, item, state))
-                                                  .toList(),
-                                            ),
-                                          ),
-                                        ],
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Row(
+                                          children: state.props.listPiece
+                                              .where((element) =>
+                                                  element.warna ==
+                                                      Warna.green &&
+                                                  element.id <= 10)
+                                              .toList()
+                                              .map((item) => baseItem(
+                                                  context, item, state))
+                                              .toList(),
+                                        ),
                                       ),
-                                    ),
+                                      Expanded(
+                                        child: Row(
+                                          children: state.props.listPiece
+                                              .where((element) =>
+                                                  element.warna ==
+                                                      Warna.green &&
+                                                  element.id > 10)
+                                              .toList()
+                                              .map((item) => baseItem(
+                                                  context, item, state))
+                                              .toList(),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -438,42 +418,35 @@ class _MapDefaultScreenState extends State<MapDefaultScreen> {
                                 child: Container(
                                   color: Colors.yellow,
                                   padding: const EdgeInsets.all(20),
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Container(
-                                      padding: const EdgeInsets.all(2),
-                                      color: Colors.white,
-                                      child: Column(
-                                        children: [
-                                          Expanded(
-                                            child: Row(
-                                              children: state.props.listPiece
-                                                  .where((element) =>
-                                                      element.warna ==
-                                                          Warna.yellow &&
-                                                      element.id <= 14)
-                                                  .toList()
-                                                  .map((item) => baseItem(
-                                                      context, item, state))
-                                                  .toList(),
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Row(
-                                              children: state.props.listPiece
-                                                  .where((element) =>
-                                                      element.warna ==
-                                                          Warna.yellow &&
-                                                      element.id > 14)
-                                                  .toList()
-                                                  .map((item) => baseItem(
-                                                      context, item, state))
-                                                  .toList(),
-                                            ),
-                                          ),
-                                        ],
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Row(
+                                          children: state.props.listPiece
+                                              .where((element) =>
+                                                  element.warna ==
+                                                      Warna.yellow &&
+                                                  element.id <= 14)
+                                              .toList()
+                                              .map((item) => baseItem(
+                                                  context, item, state))
+                                              .toList(),
+                                        ),
                                       ),
-                                    ),
+                                      Expanded(
+                                        child: Row(
+                                          children: state.props.listPiece
+                                              .where((element) =>
+                                                  element.warna ==
+                                                      Warna.yellow &&
+                                                  element.id > 14)
+                                              .toList()
+                                              .map((item) => baseItem(
+                                                  context, item, state))
+                                              .toList(),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),

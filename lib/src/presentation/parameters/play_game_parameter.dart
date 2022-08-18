@@ -12,10 +12,7 @@ class PlayGameParameter {
   List<StepEntity> listStep = [];
   List<PieceEntity> listPiece = [];
   List<Warna> finishedPlayer = [];
-  CurrentTurn currentTurn = CurrentTurn(
-    warna: Warna.red,
-    turn: Turn.standBy,
-  );
+  late CurrentTurn currentTurn;
 
   PlayGameParameter() {
     listPlayer = PlayerList.getData();

@@ -5,24 +5,11 @@ import 'package:ludo_heroes/src/domain/entities/turn_entity.dart';
 import 'package:ludo_heroes/src/presentation/blocs/play_game_bloc/play_game_bloc.dart';
 import 'package:ludo_heroes/src/utils/list_data/color_list.dart';
 import 'package:ludo_heroes/src/utils/parameter_value.dart';
+import 'package:simple_animations/simple_animations.dart';
 
 Widget stepWidget(BuildContext context, StepEntity item, PlayGameState state) {
   return Expanded(
-    child: Container(
-      padding: const EdgeInsets.all(1),
-      decoration: BoxDecoration(
-        color: ColorList.getColor(item.warna),
-        border: Border.all(color: Colors.black),
-      ),
-      child: _stepContent(context, item, state),
-    ),
-  );
-}
-
-Widget _stepContent(
-    BuildContext context, StepEntity item, PlayGameState state) {
-  if (item.pieces.isNotEmpty) {
-    return InkWell(
+    child: InkWell(
       onTap: () {
         int count = item.pieces.length;
         if (count > 0) {
@@ -41,6 +28,54 @@ Widget _stepContent(
           }
         }
       },
+      child: Container(
+        padding: const EdgeInsets.all(1),
+        decoration: BoxDecoration(
+          color: ColorList.getColor(item.warna),
+          border: Border.all(color: Colors.black),
+        ),
+        child: Stack(
+          fit: StackFit.loose,
+          alignment: Alignment.center,
+          children: [
+            Container(),
+            _animate(context, item, state),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+_animate(BuildContext context, StepEntity item, PlayGameState state) {
+  if (havePawn(item, state)) {
+    return MirrorAnimationBuilder<double>(
+      duration: const Duration(milliseconds: 600),
+      tween: Tween<double>(begin: 0, end: 5),
+      builder: (context, value, child) =>
+          _stepContent(context, item, state, value),
+    );
+  } else {
+    return _stepContent(context, item, state, 0);
+  }
+}
+
+bool havePawn(StepEntity entity, PlayGameState state) {
+  bool result = false;
+  if (entity.pieces
+          .where((element) => element.warna == currentWarna(state))
+          .isNotEmpty &&
+      currentTurn(state) == Turn.selectPawn) {
+    result = true;
+  }
+  return result;
+}
+
+_stepContent(BuildContext context, StepEntity item, PlayGameState state,
+    double padding) {
+  if (item.pieces.isNotEmpty) {
+    return Container(
+      padding: EdgeInsets.all(padding),
       child: Stack(
         fit: StackFit.expand,
         children: item.pieces
