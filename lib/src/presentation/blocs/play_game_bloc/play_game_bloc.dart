@@ -9,6 +9,8 @@ import 'package:ludo_heroes/src/domain/entities/player_entity.dart';
 import 'package:ludo_heroes/src/domain/entities/step_entity.dart';
 import 'package:ludo_heroes/src/domain/entities/turn_entity.dart';
 import 'package:ludo_heroes/src/presentation/parameters/play_game_parameter.dart';
+import 'package:ludo_heroes/src/utils/assets_sounds.dart';
+import 'package:ludo_heroes/src/utils/audio_player.dart';
 import 'package:ludo_heroes/src/utils/list_data/dice_list.dart';
 import 'package:ludo_heroes/src/utils/parameter_value.dart';
 import 'package:ludo_heroes/src/utils/list_data/piece_list.dart';
@@ -25,6 +27,7 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
     on<PlayGameEvent>((event, emit) {
       // Begin Roll
       if (event is BeginRollEvent) {
+        SoundEffects.audio(AssetSounds.dice);
         nextTurn();
         emit(BeginRollState());
       }
@@ -48,6 +51,7 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
 
       // First step out from base (dice value always 6 if this event is triggered)
       if (event is OutFromBase) {
+        SoundEffects.audio(AssetSounds.step);
         removeFromBase(event.id);
         addToFirstStep(event.id);
         state.props.currentTurn.turn = Turn.standBy;
@@ -56,6 +60,7 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
 
       // Moving a piece
       if (event is MovePiece) {
+        SoundEffects.audio(AssetSounds.step);
         state.props.currentTurn.turn = Turn.pawnMove;
         int left = event.value - 1;
         PieceEntity entity = piece(event.id);
@@ -160,6 +165,7 @@ class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
                       .basePieces
                       .add(piece);
                   killing = true;
+                  SoundEffects.audio(AssetSounds.death);
                 }
               }
             }

@@ -32,7 +32,7 @@ class PlayerList {
       finishedPieces: [],
       firstStep: 41,
       lastStep: 305,
-      finishAlign: Alignment.centerRight,
+      finishAlign: Alignment.bottomCenter,
     ),
     PlayerEntity(
       id: 4,
@@ -42,7 +42,7 @@ class PlayerList {
       finishedPieces: [],
       firstStep: 28,
       lastStep: 405,
-      finishAlign: Alignment.bottomCenter,
+      finishAlign: Alignment.centerRight,
     ),
   ];
 
