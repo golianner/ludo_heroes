@@ -10,7 +10,7 @@ import 'package:ludo_heroes/src/presentation/screens/map_screens/listener.dart';
 import 'package:ludo_heroes/src/presentation/screens/map_screens/widgets/finish_widget.dart';
 import 'package:ludo_heroes/src/presentation/screens/map_screens/widgets/player_widget.dart';
 import 'package:ludo_heroes/src/presentation/screens/map_screens/widgets/step_widget.dart';
-import 'package:ludo_heroes/src/utils/asset_images.dart';
+import 'package:ludo_heroes/src/utils/const/asset_images.dart';
 import 'package:ludo_heroes/src/utils/list_data/color_list.dart';
 import 'package:ludo_heroes/src/utils/list_data/dice_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

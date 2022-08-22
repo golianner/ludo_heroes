@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ludo_heroes/src/domain/entities/player_entity.dart';
 import 'package:ludo_heroes/src/domain/entities/turn_entity.dart';
 import 'package:ludo_heroes/src/presentation/blocs/play_game_bloc/play_game_bloc.dart';
-import 'package:ludo_heroes/src/utils/asset_gifs.dart';
+import 'package:ludo_heroes/src/utils/const/asset_gifs.dart';
 import 'package:ludo_heroes/src/utils/list_data/color_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ludo_heroes/src/utils/list_data/dice_list.dart';

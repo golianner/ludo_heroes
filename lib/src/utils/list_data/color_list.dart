@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ludo_heroes/src/domain/entities/color_entity.dart';
-import 'package:ludo_heroes/src/utils/asset_images.dart';
+import 'package:ludo_heroes/src/utils/const/asset_images.dart';
 
 class ColorList {
   static final List<ColorEntity> _list = [

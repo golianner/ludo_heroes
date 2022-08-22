@@ -3,6 +3,11 @@ part of 'play_game_bloc.dart';
 @immutable
 abstract class PlayGameEvent {}
 
+class ChoosePlayerCount extends PlayGameEvent {
+  final ChoosePlayer choosePlayer;
+  ChoosePlayerCount({required this.choosePlayer});
+}
+
 class BeginRollEvent extends PlayGameEvent {}
 
 class RollDiceEvent extends PlayGameEvent {}

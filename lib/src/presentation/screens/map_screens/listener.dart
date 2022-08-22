@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ludo_heroes/src/domain/entities/piece_entity.dart';
 import 'package:ludo_heroes/src/presentation/blocs/play_game_bloc/play_game_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ludo_heroes/src/utils/assets_sounds.dart';
+import 'package:ludo_heroes/src/utils/const/assets_sounds.dart';
 import 'package:ludo_heroes/src/utils/audio_player.dart';
 import 'package:ludo_heroes/src/utils/parameter_value.dart';
 

@@ -9,7 +9,7 @@ import 'package:ludo_heroes/src/domain/entities/player_entity.dart';
 import 'package:ludo_heroes/src/domain/entities/step_entity.dart';
 import 'package:ludo_heroes/src/domain/entities/turn_entity.dart';
 import 'package:ludo_heroes/src/presentation/parameters/play_game_parameter.dart';
-import 'package:ludo_heroes/src/utils/assets_sounds.dart';
+import 'package:ludo_heroes/src/utils/const/assets_sounds.dart';
 import 'package:ludo_heroes/src/utils/audio_player.dart';
 import 'package:ludo_heroes/src/utils/list_data/dice_list.dart';
 import 'package:ludo_heroes/src/utils/parameter_value.dart';
@@ -25,6 +25,11 @@ part 'play_game_state.dart';
 class PlayGameBloc extends Bloc<PlayGameEvent, PlayGameState> {
   PlayGameBloc() : super(PlayGameInitial()) {
     on<PlayGameEvent>((event, emit) {
+      // Choose Player Count
+      if (event is ChoosePlayerCount) {
+        state.props.choosePlayer(event.choosePlayer);
+      }
+
       // Begin Roll
       if (event is BeginRollEvent) {
         SoundEffects.audio(AssetSounds.dice);

@@ -16,7 +16,7 @@ class PlayGameParameter {
   List<Warna> finishedPlayer = [];
   late CurrentTurn currentTurn;
 
-  PlayGameParameter({ChoosePlayer choosePlayer = ChoosePlayer.four}) {
+  void choosePlayer(ChoosePlayer choosePlayer) {
     if (choosePlayer == ChoosePlayer.four) {
       _fourPlayer();
     } else {

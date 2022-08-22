@@ -1,5 +1,5 @@
 import 'package:ludo_heroes/src/domain/entities/dice_entity.dart';
-import 'package:ludo_heroes/src/utils/asset_images.dart';
+import 'package:ludo_heroes/src/utils/const/asset_images.dart';
 import 'dart:math';
 
 class DiceList {
